@@ -21,6 +21,17 @@ public class Buysell {
 		}
 		return profit;
 	}
+	static int maxProfit2(int arr[],int n)
+	{
+		int minsofar=arr[0];
+		int profit=0;
+		for(int i=1;i<n;i++)
+		{
+			if(minsofar>arr[i])minsofar=arr[i];
+			if(profit<(arr[i]-minsofar))profit=arr[i]-minsofar;
+		}
+		return profit;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -33,7 +44,7 @@ public class Buysell {
 		{
 			ar[i]=sc.nextInt();
 		}
-		int maxprofit= maxProfit(ar,n);
+		int maxprofit= maxProfit2(ar,n);
 		System.out.println("Max profit is "+maxprofit);
 	}
 
